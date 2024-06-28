@@ -104,7 +104,7 @@ runs:
 
     - run: |
         # run login shell to copy skeleton profile files
-        ${{ inputs.install-dir }}\bin\bash.exe --login
+        ${{ inputs.install-dir }}\bin\bash.exe --login -c "exit 0"
       shell: powershell
 
 branding:
