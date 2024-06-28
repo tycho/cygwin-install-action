@@ -99,7 +99,8 @@ runs:
       shell: powershell
 
     - if: ${{ inputs.add-to-path  == 'true' }}
-      run: echo "${{ inputs.install-dir }}\bin" >> $env:GITHUB_PATH
+      run: |
+        Write-Output "${{ inputs.install-dir }}\bin" | Out-File -Append -Encoding utf8 "$env:GITHUB_PATH"
       shell: powershell
 
     - run: |
